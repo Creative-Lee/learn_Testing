@@ -1,0 +1,22 @@
+{
+  "name": "learn_testing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Creative-Lee/learn_Testing.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Creative-Lee/learn_Testing/issues"
+  },
+  "homepage": "https://github.com/Creative-Lee/learn_Testing#readme",
+  "dependencies": {
+    "jest": "^29.3.0"
+  }
+}
