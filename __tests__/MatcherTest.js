@@ -1,9 +1,13 @@
-const { test1 } = require("../src/index.js");
+describe("toBe 테스트", () => {
+  test("원시형 비교", () => {
+    const output = "123";
 
-describe("toBe", () => {
-  test("toBe", () => {
-    const output = test1(); // '123' 을 return하는 함수
+    expect(output).toBe("123"); // test passed!
+  });
 
-    expect(output).toBe("123");
+  test("참조형 비교", () => {
+    const output = [1, 2, 3];
+
+    expect(output).toBe([1, 2, 3]); // test failed!
   });
 });
