@@ -26,7 +26,7 @@ describe("toEqual 테스트", () => {
   });
 });
 
-describe.only("toEqual undefined 테스트", () => {
+describe("toEqual undefined 테스트", () => {
   test("참조형 비교 - 객체", () => {
     const output = { a: 1, b: 2 };
 
@@ -37,5 +37,19 @@ describe.only("toEqual undefined 테스트", () => {
     const output = [1, 2, 3];
 
     expect(output).toEqual([1, 2, 3, undefined]); // test passed!!!!!???
+  });
+});
+
+describe.only("toStrictEqual undefined 테스트", () => {
+  test("참조형 비교 - 객체", () => {
+    const output = { a: 1, b: 2 };
+
+    expect(output).toStrictEqual({ a: 1, b: 2, c: undefined }); // test failed ^^
+  });
+
+  test("참조형 비교 - 배열", () => {
+    const output = [1, 2, 3];
+
+    expect(output).toStrictEqual([1, 2, 3, undefined]); //  test failed ^^
   });
 });
