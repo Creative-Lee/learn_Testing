@@ -40,7 +40,7 @@ describe("toEqual undefined 테스트", () => {
   });
 });
 
-describe.only("toStrictEqual undefined 테스트", () => {
+describe("toStrictEqual undefined 테스트", () => {
   test("참조형 비교 - 객체", () => {
     const output = { a: 1, b: 2 };
 
@@ -51,5 +51,27 @@ describe.only("toStrictEqual undefined 테스트", () => {
     const output = [1, 2, 3];
 
     expect(output).toStrictEqual([1, 2, 3, undefined]); //  test failed ^^
+  });
+});
+
+describe.only("toEqual vs toStrictEqual 인스턴스 테스트", () => {
+  class Test {
+    constructor(test) {
+      this.test = test;
+    }
+  }
+
+  test("toEqual 인스턴스 테스트", () => {
+    const instance = new Test(1);
+    const normal = { test: 1 };
+
+    expect(normal).toEqual(instance); // test passed !!
+  });
+
+  test("toStrictEqual 인스턴스 테스트", () => {
+    const instance = new Test(1);
+    const normal = { test: 1 };
+
+    expect(normal).toStrictEqual(instance); // test failed !!
   });
 });
