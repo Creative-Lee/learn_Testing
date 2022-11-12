@@ -110,7 +110,7 @@ describe("toContain 테스트", () => {
   });
 });
 
-describe.only("toHaveLength 테스트", () => {
+describe("toHaveLength 테스트", () => {
   test("배열 테스트", () => {
     const result = [1, 2, 3];
 
@@ -121,5 +121,28 @@ describe.only("toHaveLength 테스트", () => {
     const result = "문자열 테스트";
 
     expect(result).toHaveLength(7); // test passed !!
+  });
+});
+
+describe.only("toThrow 테스트", () => {
+  const testFunc = () => {
+    throw new Error("에러 테스트 함수입니다.");
+  };
+  const errorObj = new Error("에러 테스트 함수입니다.");
+
+  test("인자 X", () => {
+    expect(testFunc).toThrow(); // test passed !!
+  });
+
+  test("문자열 인자", () => {
+    expect(testFunc).toThrow("에러 테스트"); // test passed !!
+  });
+
+  test("Error 객체 인자", () => {
+    expect(testFunc).toThrow(errorObj); // test passed !!
+  });
+
+  test("클래스 인자", () => {
+    expect(testFunc).toThrow(Error); // test passed !!
   });
 });
