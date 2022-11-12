@@ -124,7 +124,7 @@ describe("toHaveLength 테스트", () => {
   });
 });
 
-describe.only("toThrow 테스트", () => {
+describe("toThrow 테스트", () => {
   const testFunc = () => {
     throw new Error("에러 테스트 함수입니다.");
   };
@@ -144,5 +144,18 @@ describe.only("toThrow 테스트", () => {
 
   test("클래스 인자", () => {
     expect(testFunc).toThrow(Error); // test passed !!
+  });
+});
+
+describe.only("toBeInstanceOf 테스트", () => {
+  class Test {}
+  const output = new Test();
+  const fake = {};
+
+  test("인스턴스 O", () => {
+    expect(output).toBeInstanceOf(Test); // test passed !!
+  });
+  test("인스턴스 X", () => {
+    expect(fake).toBeInstanceOf(Test); // test failed !!
   });
 });
