@@ -90,7 +90,7 @@ describe("toBeTruthy / toBeFalsy 테스트", () => {
   });
 });
 
-describe.only("toContain 테스트", () => {
+describe("toContain 테스트", () => {
   test("배열 테스트", () => {
     const result = [1, 2, 3];
 
@@ -107,5 +107,19 @@ describe.only("toContain 테스트", () => {
     const result = new Set([1, 2, 3]);
 
     expect(result).toContain(1); // test passed !!
+  });
+});
+
+describe.only("toHaveLength 테스트", () => {
+  test("배열 테스트", () => {
+    const result = [1, 2, 3];
+
+    expect(result).toHaveLength(3); // test passed !!
+  });
+
+  test("문자열 테스트", () => {
+    const result = "문자열 테스트";
+
+    expect(result).toHaveLength(7); // test passed !!
   });
 });
