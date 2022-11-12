@@ -76,7 +76,7 @@ describe("toEqual vs toStrictEqual 인스턴스 테스트", () => {
   });
 });
 
-describe.only("toBeTruthy / toBeFalsy 테스트", () => {
+describe("toBeTruthy / toBeFalsy 테스트", () => {
   test("toBeTruthy 테스트", () => {
     const result = "0";
 
@@ -87,5 +87,25 @@ describe.only("toBeTruthy / toBeFalsy 테스트", () => {
     const result = 0;
 
     expect(result).toBeFalsy(); // test passed !!
+  });
+});
+
+describe.only("toContain 테스트", () => {
+  test("배열 테스트", () => {
+    const result = [1, 2, 3];
+
+    expect(result).toContain(1); // test passed !!
+  });
+
+  test("문자열 테스트", () => {
+    const result = "문자열 테스트";
+
+    expect(result).toContain("문자열"); // test passed !!
+  });
+
+  test("Set 테스트", () => {
+    const result = new Set([1, 2, 3]);
+
+    expect(result).toContain(1); // test passed !!
   });
 });
