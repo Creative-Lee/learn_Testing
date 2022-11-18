@@ -147,7 +147,7 @@ describe("toThrow 테스트", () => {
   });
 });
 
-describe.only("toBeInstanceOf 테스트", () => {
+describe("toBeInstanceOf 테스트", () => {
   class Test {}
   const output = new Test();
   const fake = {};
@@ -157,5 +157,15 @@ describe.only("toBeInstanceOf 테스트", () => {
   });
   test("인스턴스 X", () => {
     expect(fake).toBeInstanceOf(Test); // test failed !!
+  });
+});
+
+describe.only("not 테스트", () => {
+  const input = true;
+
+  const output = false;
+
+  test("not", () => {
+    expect(input).not.toBe(output); // test passed !!
   });
 });
