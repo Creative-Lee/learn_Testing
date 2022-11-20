@@ -160,12 +160,23 @@ describe("toBeInstanceOf 테스트", () => {
   });
 });
 
-describe.only("not 테스트", () => {
+describe("not 테스트", () => {
   const input = true;
 
   const output = false;
 
   test("not", () => {
     expect(input).not.toBe(output); // test passed !!
+  });
+});
+
+describe.only("test.each 테스트", () => {
+  const error = (err) => {
+    throw new Error(err);
+  };
+  test.each([[""], ["에러"], ["에러객체"]])("each iter test", (input) => {
+    expect(() => {
+      error(input);
+    }).toThrow(); // test passed !!
   });
 });
